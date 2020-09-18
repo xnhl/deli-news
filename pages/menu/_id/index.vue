@@ -54,11 +54,11 @@ export default {
 		}
 	},
 	created() {
-		let menuLen = menuData.length;
+		let menuLen = menuData.length
 		for (let i = 0; i < menuLen; i++) {
-			let slug = menuData[i].menutitle;
+			let slug = menuData[i].menutitle
 			if (slug === this.$route.params.id) {
-				this.info = menuData[i];
+				this.info = menuData[i]
 				this.next = menuData[i+1] && menuData[i+1] !== null ? {
 					title: menuData[i+1].title,
 					slug: menuData[i+1].menutitle

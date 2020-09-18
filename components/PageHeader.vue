@@ -39,66 +39,66 @@ export default {
 	methods: {
 		showSort: function() {
 			if (this.quotes) {
-				const sort = document.getElementById('quotes-sort-wrapper');
+				const sort = document.getElementById('quotes-sort-wrapper')
 				if (sort.classList.contains('hide')) {
 					sort.classList.remove('hide')
 				} else sort.classList.add('hide')
 			} else if (this.media && !this.isYoutube) {
-				const sort = document.getElementById('media-sort-wrapper');
+				const sort = document.getElementById('media-sort-wrapper')
 				if (sort.classList.contains('hide')) {
 					sort.classList.remove('hide')
 				} else sort.classList.add('hide')
 			} else if (this.articles) {
-				const sort = document.getElementById('articles-sort-wrapper');
+				const sort = document.getElementById('articles-sort-wrapper')
 				if (sort.classList.contains('hide')) {
 					sort.classList.remove('hide')
 				} else sort.classList.add('hide')
 			} else if (this.isYoutube) {
-				const sort = document.getElementById('youtube-sort-wrapper');
+				const sort = document.getElementById('youtube-sort-wrapper')
 				if (sort.classList.contains('hide')) {
 					sort.classList.remove('hide')
 				} else sort.classList.add('hide')
 			}
 		},
 		sortAZ: function(e) {
-			window.scrollTo(0, 0);
-			var each, container;
+			window.scrollTo(0, 0)
+			var each, container
 			if (e.target.classList.contains('section-title-sort')) {
-				container = e.target.parentNode.nextElementSibling;
-				each = [...e.target.parentNode.nextElementSibling.children];
+				container = e.target.parentNode.nextElementSibling
+				each = [...e.target.parentNode.nextElementSibling.children]
 			} else if (e.target.classList.contains('section-title-sort-icon')) {
-				container = e.target.parentNode.parentNode.nextElementSibling;
-				each = [...e.target.parentNode.parentNode.nextElementSibling.children];
+				container = e.target.parentNode.parentNode.nextElementSibling
+				each = [...e.target.parentNode.parentNode.nextElementSibling.children]
 			}
 			each.sort((a, b) => {
-				let nameA = a.children[1].textContent.replace("'", "").toLowerCase();
-				let nameB = b.children[1].textContent.replace("'", "").toLowerCase();
+				let nameA = a.children[1].textContent.replace("'", "").toLowerCase()
+				let nameB = b.children[1].textContent.replace("'", "").toLowerCase()
 				return nameA < nameB ? -1 : nameA > nameB ? 1 : 0
-			});
+			})
 			if (this.sortalpha % 2 === 0) {
-				var reversed = each.reverse();
+				var reversed = each.reverse()
 				each = reversed
 			}
 			each.forEach(tool => {
 				container.appendChild(tool)
-			});
+			})
 			this.sortalpha++
 		},
 		vimeoSort: function() {
-			let container = document.getElementsByClassName("media-container")[0];
-			let vimeos = [...container.children];
+			let container = document.getElementsByClassName("media-container")[0]
+			let vimeos = [...container.children]
 			let sorted = vimeos.sort((a, b) => {
-				let aa = a.dataset.title.replace(/[^a-z0-9]/gi, "");
-				let bb = b.dataset.title.replace(/[^a-z0-9]/gi, "");
+				let aa = a.dataset.title.replace(/[^a-z0-9]/gi, "")
+				let bb = b.dataset.title.replace(/[^a-z0-9]/gi, "")
 				return aa < bb ? 1 : aa > bb ? -1 : 0
-			});
+			})
 			if (this.sortVimeo % 2 === 0) {
-				var reversed = sorted.reverse();
+				var reversed = sorted.reverse()
 				sorted = reversed
 			}
 			sorted.forEach(vimeo => {
 				container.appendChild(vimeo)
-			});
+			})
 			this.sortVimeo++
 		}
 	}

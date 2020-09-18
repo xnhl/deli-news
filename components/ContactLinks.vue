@@ -4,9 +4,9 @@
 			<p @click="copy" alt="call" class="contact-button phone" :data-content="phone" v-text="`Phone: ${phone}`"></p>
 			<!-- <a href="tel:+15625982123" alt="call" class="contact-button phone" v-text="`Phone: ${phone}`"></a> -->
 			<p @click="copy" alt="e-mail" class="contact-button email" :data-content="email" v-text="`E-mail: ${email}`"></p>
+			<!-- <a href="mailto:Delinewspizza2@gmail.com" alt="e-mail" class="contact-button email">{{ email }}</a> -->
 		</div>
 		<div class="contact-button-section">
-			<!-- <a href="mailto:Delinewspizza2@gmail.com" alt="e-mail" class="contact-button email">{{ email }}</a> -->
 			<a href="https://facebook.com/delinewspizza" class="contact-button facebook">
 				<img src="/img/social/facebook.svg" alt="facebook" class="contact-button-icon">
 			</a>
@@ -31,7 +31,7 @@ export default {
 	},
 	methods: {
 		copy: function(e) {
-			const copy = require('copy-text-to-clipboard');
+			const copy = require('copy-text-to-clipboard')
 			copy(e.target.dataset.content)
 		}
 	}

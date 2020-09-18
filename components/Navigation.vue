@@ -27,13 +27,13 @@ export default {
 	},
 	methods: {
 		handleScroll: function() {
-			let titles = [...document.getElementsByClassName("menu-section-title")];
-			let subtitles = [...document.getElementsByClassName("subsection-title")];
-			let y = window.scrollY;
-			this.scroll_new = y;
-			let nav_wrapper = document.getElementById("navigation-wrapper");
+			let titles = [...document.getElementsByClassName("menu-section-title")]
+			let subtitles = [...document.getElementsByClassName("subsection-title")]
+			let y = window.scrollY
+			this.scroll_new = y
+			let nav_wrapper = document.getElementById("navigation-wrapper")
 			if (this.scroll_new > this.scroll_old) {
-				nav_wrapper.classList.add("nav-hidden");
+				nav_wrapper.classList.add("nav-hidden")
 				this.scroll_old = y
 				for (let title of titles) {
 					title.classList.add("nav-hiding")
@@ -42,7 +42,7 @@ export default {
 					subtitle.classList.add("nav-hiding")
 				}
 			} else if (this.scroll_new < this.scroll_old) {
-				nav_wrapper.classList.remove("nav-hidden");
+				nav_wrapper.classList.remove("nav-hidden")
 				this.scroll_old = y
 				for (let title of titles) {
 					title.classList.remove("nav-hiding")
@@ -54,7 +54,7 @@ export default {
 		}
 	},
 	mounted() {
-		window.addEventListener('scroll', this.handleScroll);
+		window.addEventListener('scroll', this.handleScroll)
 	}
 }
 </script>

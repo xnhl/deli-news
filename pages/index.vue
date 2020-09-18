@@ -48,22 +48,22 @@ export default {
 	},
 	methods: {
 		copy: function(e) {
-			const copy = require('copy-text-to-clipboard');
+			const copy = require('copy-text-to-clipboard')
 			copy(e.target.dataset.content)
 		}
 	},
 	mounted() {
-		var lazyloadImages = document.querySelectorAll('.lazy');
+		var lazyloadImages = document.querySelectorAll('.lazy')
 		var imageObserver = new IntersectionObserver((entries, observer) => {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					var image = entry.target;
-					image.src = image.dataset.lazysrc;
-					image.classList.remove('lazy');
+					var image = entry.target
+					image.src = image.dataset.lazysrc
+					image.classList.remove('lazy')
 					imageObserver.unobserve(image)
 				}
 			})
-		});
+		})
 		lazyloadImages.forEach((image) => {
 			imageObserver.observe(image)
 		})

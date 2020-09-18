@@ -2,10 +2,6 @@
 	<div id="foot-wrapper">
 		<section id="contact">
 			<p class="contact-item">&copy; 2020</p>
-			<!-- <div class="contact-item">
-				<p class="contact-item-email" v-text="`Questions / comments / suggestions?`"></p>
-				<a class="contact-item-email" href="mailto:mwtheta@protonmail.com" v-text="`mwtheta@protonmail.com`"></a>
-			</div> -->
 		</section>
 	</div>
 </template>
